@@ -1248,6 +1248,167 @@
       text-underline-offset: 3px;
     }
 
+    .spot-weather {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .spot-weather span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      min-height: 32px;
+      padding: 0 10px;
+      color: var(--ink);
+      background: #fff8e8;
+      border: 1px solid #f1dca2;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+
+    .spot-weather i {
+      color: var(--coral);
+    }
+
+    .weather-board {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      padding: clamp(14px, 3vw, 24px);
+    }
+
+    .weather-card {
+      min-height: 430px;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      overflow: hidden;
+      color: #fff;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(180deg, rgba(16, 34, 53, 0.1) 0%, rgba(16, 34, 53, 0.86) 100%),
+        var(--weather-image) center/cover no-repeat;
+      box-shadow: var(--soft-shadow);
+    }
+
+    .weather-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      padding: clamp(18px, 3vw, 26px);
+    }
+
+    .weather-label {
+      display: inline-flex;
+      width: fit-content;
+      min-height: 28px;
+      align-items: center;
+      padding: 0 10px;
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.88);
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .weather-card h3 {
+      max-width: 470px;
+      margin: 12px 0 0;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3.8rem);
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    .weather-icon {
+      display: grid;
+      width: 64px;
+      height: 64px;
+      flex: 0 0 auto;
+      place-items: center;
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      font-size: 1.55rem;
+      box-shadow: 0 10px 28px rgba(16, 34, 53, 0.2);
+    }
+
+    .weather-card-body {
+      padding: clamp(18px, 3vw, 26px);
+      background: linear-gradient(180deg, transparent 0%, rgba(16, 34, 53, 0.22) 100%);
+    }
+
+    .weather-now {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .weather-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      min-height: 30px;
+      padding: 0 10px;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 900;
+      backdrop-filter: blur(8px);
+    }
+
+    .weather-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .weather-stat {
+      min-height: 78px;
+      padding: 11px;
+      background: rgba(255, 255, 255, 0.13);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: var(--radius);
+      backdrop-filter: blur(8px);
+    }
+
+    .weather-stat span {
+      display: block;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .weather-stat strong {
+      display: block;
+      margin-top: 6px;
+      font-size: clamp(1rem, 2vw, 1.32rem);
+      line-height: 1.1;
+    }
+
+    .weather-note {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.84);
+      line-height: 1.5;
+    }
+
+    .weather-source {
+      padding: 0 clamp(14px, 3vw, 24px) clamp(16px, 3vw, 24px);
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.5;
+    }
+
     footer {
       padding: 38px 18px 44px;
       color: rgba(255, 255, 255, 0.82);
@@ -1304,7 +1465,8 @@
       .flight-summary,
       .hotel-grid,
       .route-briefs,
-      .photo-band {
+      .photo-band,
+      .weather-board {
         grid-template-columns: 1fr;
       }
 
@@ -1328,6 +1490,14 @@
 
       .activity-photo.wide {
         grid-column: auto;
+      }
+
+      .weather-card {
+        min-height: 390px;
+      }
+
+      .weather-stats {
+        grid-template-columns: 1fr;
       }
 
       .social-grid {
@@ -1417,6 +1587,9 @@
       </button>
       <button class="tab-button" id="calendar-tab" type="button" role="tab" aria-selected="false" aria-controls="calendar" data-tab="calendar">
         <i class="fa-regular fa-calendar-days" aria-hidden="true"></i><span>Calendar</span>
+      </button>
+      <button class="tab-button" id="weather-tab" type="button" role="tab" aria-selected="false" aria-controls="weather" data-tab="weather">
+        <i class="fa-solid fa-cloud-sun-rain" aria-hidden="true"></i><span>Weather</span>
       </button>
       <button class="tab-button" id="guide-tab" type="button" role="tab" aria-selected="false" aria-controls="guide" data-tab="guide">
         <i class="fa-solid fa-user-tie" aria-hidden="true"></i><span>Guide</span>
@@ -1998,6 +2171,158 @@
       </div>
     </section>
 
+    <section class="tab-panel" id="weather" role="tabpanel" aria-labelledby="weather-tab">
+      <div class="panel-head">
+        <div>
+          <p class="panel-kicker">Live and typical July</p>
+          <h2 class="panel-title">Weather by area</h2>
+          <p class="panel-note">Each stop shows live Open-Meteo conditions when the browser can fetch them. Trip-day forecast appears when the date is inside the forecast window; otherwise the card keeps a typical July planning note.</p>
+        </div>
+        <div class="mini-status" id="weather-status" aria-live="polite">
+          <strong>Checking weather</strong>
+          <span>Typical July notes stay visible if live forecast is not available yet.</span>
+        </div>
+      </div>
+
+      <div class="weather-board">
+        <article class="weather-card" data-weather-card="san-jose" style="--weather-image:url('https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=1200&amp;q=80');">
+          <div class="weather-card-top">
+            <div>
+              <span class="weather-label">Jul 12</span>
+              <h3>San Jose / Marriott</h3>
+            </div>
+            <div class="weather-icon" data-weather-icon><i class="fa-solid fa-cloud-sun-rain" aria-hidden="true"></i></div>
+          </div>
+          <div class="weather-card-body">
+            <div class="weather-now">
+              <span class="weather-pill" data-weather-live>Live: loading</span>
+              <span class="weather-pill" data-weather-updated>Typical July ready</span>
+            </div>
+            <div class="weather-stats">
+              <div class="weather-stat"><span>Trip day</span><strong data-weather-trip>20-27 deg C</strong></div>
+              <div class="weather-stat"><span>Rain</span><strong data-weather-rain>Afternoon showers</strong></div>
+              <div class="weather-stat"><span>Plan</span><strong>Arrival buffer</strong></div>
+            </div>
+            <p class="weather-note">Warm valley weather. Keep rain shells accessible after landing, but this is mostly a rest and logistics night.</p>
+          </div>
+        </article>
+
+        <article class="weather-card" data-weather-card="bajos" style="--weather-image:url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1200&amp;q=80');">
+          <div class="weather-card-top">
+            <div>
+              <span class="weather-label">Jul 13-15</span>
+              <h3>El Silencio / Bajos del Toro</h3>
+            </div>
+            <div class="weather-icon" data-weather-icon><i class="fa-solid fa-cloud-rain" aria-hidden="true"></i></div>
+          </div>
+          <div class="weather-card-body">
+            <div class="weather-now">
+              <span class="weather-pill" data-weather-live>Live: loading</span>
+              <span class="weather-pill" data-weather-updated>Typical July ready</span>
+            </div>
+            <div class="weather-stats">
+              <div class="weather-stat"><span>Trip day</span><strong data-weather-trip>14-22 deg C</strong></div>
+              <div class="weather-stat"><span>Rain</span><strong data-weather-rain>Wet cloud forest</strong></div>
+              <div class="weather-stat"><span>Plan</span><strong>Hike early</strong></div>
+            </div>
+            <p class="weather-note">Cooler, damp, and green. Best packing move: light layers, trail shoes, and a dry bag for Blue Falls.</p>
+          </div>
+        </article>
+
+        <article class="weather-card" data-weather-card="arenal" style="--weather-image:url('https://upload.wikimedia.org/wikipedia/commons/f/ff/CostaRica_Arenal_Volcano_%28pixinn.net%29.jpg');">
+          <div class="weather-card-top">
+            <div>
+              <span class="weather-label">Jul 15-20</span>
+              <h3>La Fortuna / Arenal</h3>
+            </div>
+            <div class="weather-icon" data-weather-icon><i class="fa-solid fa-cloud-bolt" aria-hidden="true"></i></div>
+          </div>
+          <div class="weather-card-body">
+            <div class="weather-now">
+              <span class="weather-pill" data-weather-live>Live: loading</span>
+              <span class="weather-pill" data-weather-updated>Typical July ready</span>
+            </div>
+            <div class="weather-stats">
+              <div class="weather-stat"><span>Trip day</span><strong data-weather-trip>22-30 deg C</strong></div>
+              <div class="weather-stat"><span>Rain</span><strong data-weather-rain>Showers likely</strong></div>
+              <div class="weather-stat"><span>Plan</span><strong>Water days</strong></div>
+            </div>
+            <p class="weather-note">Warm and humid. Schedule volcano views and bridges earlier, then let rafting, waterfall, and hot springs absorb the wetter hours.</p>
+          </div>
+        </article>
+
+        <article class="weather-card" data-weather-card="monteverde" style="--weather-image:url('https://upload.wikimedia.org/wikipedia/commons/e/e3/Monteverde_bosque.jpg');">
+          <div class="weather-card-top">
+            <div>
+              <span class="weather-label">Jul 20-22</span>
+              <h3>Monteverde</h3>
+            </div>
+            <div class="weather-icon" data-weather-icon><i class="fa-solid fa-cloud" aria-hidden="true"></i></div>
+          </div>
+          <div class="weather-card-body">
+            <div class="weather-now">
+              <span class="weather-pill" data-weather-live>Live: loading</span>
+              <span class="weather-pill" data-weather-updated>Typical July ready</span>
+            </div>
+            <div class="weather-stats">
+              <div class="weather-stat"><span>Trip day</span><strong data-weather-trip>16-23 deg C</strong></div>
+              <div class="weather-stat"><span>Rain</span><strong data-weather-rain>Cool mist</strong></div>
+              <div class="weather-stat"><span>Plan</span><strong>Canopy layer</strong></div>
+            </div>
+            <p class="weather-note">Expect cooler air, mist, and wind in the trees. Bring sleeves for bridges and zip-line time.</p>
+          </div>
+        </article>
+
+        <article class="weather-card" data-weather-card="tamarindo" style="--weather-image:url('https://upload.wikimedia.org/wikipedia/commons/2/22/Beach_Tamarindo%2C_Costa_Rica.jpg');">
+          <div class="weather-card-top">
+            <div>
+              <span class="weather-label">Jul 22-25</span>
+              <h3>Tamarindo</h3>
+            </div>
+            <div class="weather-icon" data-weather-icon><i class="fa-solid fa-water" aria-hidden="true"></i></div>
+          </div>
+          <div class="weather-card-body">
+            <div class="weather-now">
+              <span class="weather-pill" data-weather-live>Live: loading</span>
+              <span class="weather-pill" data-weather-updated>Typical July ready</span>
+            </div>
+            <div class="weather-stats">
+              <div class="weather-stat"><span>Trip day</span><strong data-weather-trip>24-32 deg C</strong></div>
+              <div class="weather-stat"><span>Rain</span><strong data-weather-rain>Later showers</strong></div>
+              <div class="weather-stat"><span>Plan</span><strong>Surf mornings</strong></div>
+            </div>
+            <p class="weather-note">Hot beach weather. Keep surf lessons in the morning and leave the heavier heat for pool, shade, or a sunset boat.</p>
+          </div>
+        </article>
+
+        <article class="weather-card" data-weather-card="manuel" style="--weather-image:url('https://upload.wikimedia.org/wikipedia/commons/4/43/Parque_Nacional_Manuel_Antonio_02.jpg');">
+          <div class="weather-card-top">
+            <div>
+              <span class="weather-label">Jul 25-28</span>
+              <h3>Manuel Antonio</h3>
+            </div>
+            <div class="weather-icon" data-weather-icon><i class="fa-solid fa-umbrella-beach" aria-hidden="true"></i></div>
+          </div>
+          <div class="weather-card-body">
+            <div class="weather-now">
+              <span class="weather-pill" data-weather-live>Live: loading</span>
+              <span class="weather-pill" data-weather-updated>Typical July ready</span>
+            </div>
+            <div class="weather-stats">
+              <div class="weather-stat"><span>Trip day</span><strong data-weather-trip>24-31 deg C</strong></div>
+              <div class="weather-stat"><span>Rain</span><strong data-weather-rain>Humid showers</strong></div>
+              <div class="weather-stat"><span>Plan</span><strong>Park early</strong></div>
+            </div>
+            <p class="weather-note">Hot, humid, and tropical. Do the national park early, then let beach time and boat options flex around rain.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="weather-source">
+        Live conditions are fetched in the browser from Open-Meteo. Forecasts only cover the available forecast window, so later trip dates remain marked as typical July until they are close enough.
+      </div>
+    </section>
+
     <section class="tab-panel" id="guide" role="tabpanel" aria-labelledby="guide-tab">
       <div class="panel-head">
         <div>
@@ -2099,6 +2424,10 @@
           <div class="spot-content">
             <div class="spot-meta">Jul 12 arrival night</div>
             <p>The first night is practical: land, clear the airport, and sleep close by before the mountain road begins.</p>
+            <div class="spot-weather" data-weather-chip="san-jose">
+              <span><i class="fa-solid fa-cloud-sun-rain" aria-hidden="true"></i><strong data-chip-temp>20-27 deg C</strong></span>
+              <span data-chip-rain>Afternoon showers</span>
+            </div>
             <div class="activity-gallery">
               <div class="activity-photo wide" style="--activity-image:url('https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=900&amp;q=80');">
                 <h4>Costa Rica Marriott Hotel Hacienda Belen</h4>
@@ -2116,6 +2445,10 @@
           <div class="spot-content">
             <div class="spot-meta">Jul 13-15, 2 nights at El Silencio Lodge &amp; Spa</div>
             <p>Start the Costa Rica leg quietly: lodge trails, water, forest, and the blue-water falls near Bajos del Toro.</p>
+            <div class="spot-weather" data-weather-chip="bajos">
+              <span><i class="fa-solid fa-cloud-rain" aria-hidden="true"></i><strong data-chip-temp>14-22 deg C</strong></span>
+              <span data-chip-rain>Wet cloud forest</span>
+            </div>
             <div class="activity-gallery">
               <div class="activity-photo" style="--activity-image:url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=900&amp;q=80');">
                 <h4>Hotel waterfall and hike</h4>
@@ -2137,6 +2470,10 @@
           <div class="spot-content">
             <div class="spot-meta">Jul 15-20, 5 nights at Arenal Springs</div>
             <p>This is the active middle of the trip: water, canopy, volcano, wildlife, and one slower food/culture day.</p>
+            <div class="spot-weather" data-weather-chip="arenal">
+              <span><i class="fa-solid fa-cloud-bolt" aria-hidden="true"></i><strong data-chip-temp>22-30 deg C</strong></span>
+              <span data-chip-rain>Showers likely</span>
+            </div>
             <div class="activity-gallery">
               <div class="activity-photo" style="--activity-image:url('https://upload.wikimedia.org/wikipedia/commons/f/ff/Pacuareriverrafting.jpg');">
                 <h4>Rafting</h4>
@@ -2178,6 +2515,10 @@
           <div class="spot-content">
             <div class="spot-meta">Jul 20-22, 2 nights at Koora Monteverde</div>
             <p>A short cloud-forest stop, so keep the plan focused: bridges, canopy, and enough time to enjoy the cooler air.</p>
+            <div class="spot-weather" data-weather-chip="monteverde">
+              <span><i class="fa-solid fa-cloud" aria-hidden="true"></i><strong data-chip-temp>16-23 deg C</strong></span>
+              <span data-chip-rain>Cool mist</span>
+            </div>
             <div class="activity-gallery">
               <div class="activity-photo" style="--activity-image:url('https://upload.wikimedia.org/wikipedia/commons/2/25/Monteverde_puente.jpg');">
                 <h4>Hanging bridges</h4>
@@ -2199,6 +2540,10 @@
           <div class="spot-content">
             <div class="spot-meta">Jul 22-25, 3 nights at The Coast</div>
             <p>The Pacific chapter is surf-first: plan at least two mornings in the water, then keep the afternoons flexible for riding, boat time, and sunset.</p>
+            <div class="spot-weather" data-weather-chip="tamarindo">
+              <span><i class="fa-solid fa-water" aria-hidden="true"></i><strong data-chip-temp>24-32 deg C</strong></span>
+              <span data-chip-rain>Surf mornings</span>
+            </div>
             <div class="activity-gallery">
               <div class="activity-photo" style="--activity-image:url('https://upload.wikimedia.org/wikipedia/commons/1/12/Vacaciones_Tamarindo_kids_CRC_35_scenic.JPG');">
                 <h4>Surf lesson day 1</h4>
@@ -2228,6 +2573,10 @@
           <div class="spot-content">
             <div class="spot-meta">Jul 25-28, 3 nights at Parador Resort &amp; Spa</div>
             <p>The finale stays close to the water and park: one wildlife morning, one boat option, one faster water option, and real beach time.</p>
+            <div class="spot-weather" data-weather-chip="manuel">
+              <span><i class="fa-solid fa-umbrella-beach" aria-hidden="true"></i><strong data-chip-temp>24-31 deg C</strong></span>
+              <span data-chip-rain>Park early</span>
+            </div>
             <div class="activity-gallery">
               <div class="activity-photo" style="--activity-image:url('https://upload.wikimedia.org/wikipedia/commons/6/69/Manuel_antonio_06_april_2005.jpeg');">
                 <h4>National park</h4>
@@ -2262,6 +2611,240 @@
     const tabPanels = Array.from(document.querySelectorAll(".tab-panel"));
     const mapPins = Array.from(document.querySelectorAll(".map-pin"));
     const spotCards = Array.from(document.querySelectorAll("[data-spot-card]"));
+    const weatherStatus = document.getElementById("weather-status");
+    const weatherStops = [
+      {
+        id: "san-jose",
+        tripDate: "2026-07-12",
+        tripLabel: "Jul 12",
+        latitude: 9.98,
+        longitude: -84.18,
+        typicalTemp: "20-27 deg C",
+        typicalRain: "Afternoon showers",
+        fallback: "Warm valley weather, with showers more likely later in the day."
+      },
+      {
+        id: "bajos",
+        tripDate: "2026-07-13",
+        tripLabel: "Jul 13",
+        latitude: 10.22,
+        longitude: -84.30,
+        typicalTemp: "14-22 deg C",
+        typicalRain: "Wet cloud forest",
+        fallback: "Cooler and damp. Trails and waterfalls are best with rain gear."
+      },
+      {
+        id: "arenal",
+        tripDate: "2026-07-16",
+        tripLabel: "Jul 16",
+        latitude: 10.47,
+        longitude: -84.65,
+        typicalTemp: "22-30 deg C",
+        typicalRain: "Showers likely",
+        fallback: "Warm and humid, with rain that can build during the afternoon."
+      },
+      {
+        id: "monteverde",
+        tripDate: "2026-07-21",
+        tripLabel: "Jul 21",
+        latitude: 10.30,
+        longitude: -84.82,
+        typicalTemp: "16-23 deg C",
+        typicalRain: "Cool mist",
+        fallback: "Cloud forest weather is cooler, breezy, and often misty."
+      },
+      {
+        id: "tamarindo",
+        tripDate: "2026-07-23",
+        tripLabel: "Jul 23",
+        latitude: 10.30,
+        longitude: -85.84,
+        typicalTemp: "24-32 deg C",
+        typicalRain: "Later showers",
+        fallback: "Hot beach weather. Surf and outdoor plans are usually better earlier."
+      },
+      {
+        id: "manuel",
+        tripDate: "2026-07-26",
+        tripLabel: "Jul 26",
+        latitude: 9.39,
+        longitude: -84.14,
+        typicalTemp: "24-31 deg C",
+        typicalRain: "Humid showers",
+        fallback: "Hot, humid coast and rainforest weather. Park mornings are best."
+      }
+    ];
+
+    const weatherCodeText = new Map([
+      [0, "Clear"],
+      [1, "Mostly clear"],
+      [2, "Partly cloudy"],
+      [3, "Cloudy"],
+      [45, "Fog"],
+      [48, "Fog"],
+      [51, "Light drizzle"],
+      [53, "Drizzle"],
+      [55, "Heavy drizzle"],
+      [61, "Light rain"],
+      [63, "Rain"],
+      [65, "Heavy rain"],
+      [80, "Rain showers"],
+      [81, "Rain showers"],
+      [82, "Heavy showers"],
+      [95, "Thunderstorms"],
+      [96, "Thunderstorms"],
+      [99, "Thunderstorms"]
+    ]);
+
+    function weatherText(code) {
+      return weatherCodeText.get(Number(code)) || "Mixed weather";
+    }
+
+    function weatherIcon(code) {
+      const numericCode = Number(code);
+      if (numericCode === 0) return "fa-solid fa-sun";
+      if (numericCode === 1 || numericCode === 2) return "fa-solid fa-cloud-sun";
+      if (numericCode === 3) return "fa-solid fa-cloud";
+      if (numericCode === 45 || numericCode === 48) return "fa-solid fa-smog";
+      if (numericCode >= 95) return "fa-solid fa-cloud-bolt";
+      if (numericCode >= 51) return "fa-solid fa-cloud-rain";
+      return "fa-solid fa-cloud-sun-rain";
+    }
+
+    function numericWeatherValue(value) {
+      return typeof value === "number" && Number.isFinite(value) ? value : NaN;
+    }
+
+    function formatTemp(value) {
+      return Number.isFinite(value) ? `${Math.round(value)} deg C` : null;
+    }
+
+    function formatWind(value) {
+      return Number.isFinite(value) ? `Wind ${Math.round(value)} km/h` : "Wind varies";
+    }
+
+    function setWeatherStatus(title, detail) {
+      if (!weatherStatus) return;
+      weatherStatus.innerHTML = `<strong>${title}</strong><span>${detail}</span>`;
+    }
+
+    function buildWeatherUrl(stop) {
+      const url = new URL("https://api.open-meteo.com/v1/forecast");
+      url.search = new URLSearchParams({
+        latitude: String(stop.latitude),
+        longitude: String(stop.longitude),
+        current: "temperature_2m,apparent_temperature,weather_code,wind_speed_10m",
+        daily: "weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum",
+        forecast_days: "16",
+        timezone: "auto"
+      }).toString();
+      return url.toString();
+    }
+
+    function updateWeatherChip(stop, details) {
+      const chip = document.querySelector(`[data-weather-chip="${stop.id}"]`);
+      if (!chip) return;
+      const temp = chip.querySelector("[data-chip-temp]");
+      const rain = chip.querySelector("[data-chip-rain]");
+      if (temp) temp.textContent = details.tripTemp || details.liveTemp || stop.typicalTemp;
+      if (rain) rain.textContent = details.tripRain || details.liveSummary || stop.typicalRain;
+    }
+
+    function updateWeatherCard(stop, details) {
+      const card = document.querySelector(`[data-weather-card="${stop.id}"]`);
+      if (!card) return;
+      const icon = card.querySelector("[data-weather-icon] i");
+      const live = card.querySelector("[data-weather-live]");
+      const updated = card.querySelector("[data-weather-updated]");
+      const trip = card.querySelector("[data-weather-trip]");
+      const rain = card.querySelector("[data-weather-rain]");
+
+      if (icon) icon.className = details.iconClass || "fa-solid fa-cloud-sun-rain";
+      if (live) live.textContent = details.liveSummary || `Typical: ${stop.typicalTemp}`;
+      if (updated) updated.textContent = details.updatedText || "Typical July";
+      if (trip) trip.textContent = details.tripTemp || stop.typicalTemp;
+      if (rain) rain.textContent = details.tripRain || stop.typicalRain;
+    }
+
+    function applyWeatherFallback(stop, reason = "Typical July") {
+      const details = {
+        iconClass: "fa-solid fa-cloud-sun-rain",
+        liveSummary: reason,
+        updatedText: stop.fallback,
+        tripTemp: stop.typicalTemp,
+        tripRain: stop.typicalRain
+      };
+      updateWeatherCard(stop, details);
+      updateWeatherChip(stop, details);
+    }
+
+    async function loadWeather() {
+      if (!window.fetch) {
+        weatherStops.forEach((stop) => applyWeatherFallback(stop, "Live weather unavailable"));
+        setWeatherStatus("Typical July shown", "This browser cannot fetch live weather.");
+        return;
+      }
+
+      setWeatherStatus("Checking weather", "Fetching live Open-Meteo conditions for each stop.");
+      let liveCount = 0;
+
+      await Promise.all(weatherStops.map(async (stop) => {
+        try {
+          const response = await fetch(buildWeatherUrl(stop));
+          if (!response.ok) throw new Error("Weather request failed");
+          const data = await response.json();
+          const current = data.current || {};
+          const daily = data.daily || {};
+          const currentTemp = formatTemp(numericWeatherValue(current.temperature_2m));
+          const feelsLike = formatTemp(numericWeatherValue(current.apparent_temperature));
+          const condition = weatherText(current.weather_code);
+          const tripIndex = Array.isArray(daily.time) ? daily.time.indexOf(stop.tripDate) : -1;
+          const hasTripForecast = tripIndex >= 0;
+          const maxTemp = hasTripForecast ? formatTemp(numericWeatherValue(daily.temperature_2m_max?.[tripIndex])) : null;
+          const minTemp = hasTripForecast ? formatTemp(numericWeatherValue(daily.temperature_2m_min?.[tripIndex])) : null;
+          const rainChance = hasTripForecast ? numericWeatherValue(daily.precipitation_probability_max?.[tripIndex]) : NaN;
+          const rainAmount = hasTripForecast ? numericWeatherValue(daily.precipitation_sum?.[tripIndex]) : NaN;
+          const tripTemp = maxTemp && minTemp ? `${minTemp} to ${maxTemp}` : stop.typicalTemp;
+          const tripRain = Number.isFinite(rainChance)
+            ? `${Math.round(rainChance)}% rain chance`
+            : stop.typicalRain;
+          const rainDetail = Number.isFinite(rainAmount) && rainAmount > 0
+            ? `${tripRain}, ${rainAmount.toFixed(1)} mm`
+            : tripRain;
+          const liveSummary = currentTemp
+            ? `${currentTemp} now, ${condition}, ${formatWind(numericWeatherValue(current.wind_speed_10m))}`
+            : `Typical: ${stop.typicalTemp}`;
+          const updatedText = hasTripForecast
+            ? `Forecast for ${stop.tripLabel}`
+            : `Trip date outside forecast window: ${stop.typicalRain}`;
+
+          liveCount += 1;
+          updateWeatherCard(stop, {
+            iconClass: weatherIcon(current.weather_code),
+            liveSummary,
+            updatedText: feelsLike ? `${updatedText}; feels ${feelsLike}` : updatedText,
+            tripTemp,
+            tripRain: rainDetail
+          });
+          updateWeatherChip(stop, {
+            liveTemp: currentTemp,
+            liveSummary: condition,
+            tripTemp,
+            tripRain
+          });
+        } catch (error) {
+          applyWeatherFallback(stop, "Live weather unavailable");
+        }
+      }));
+
+      if (liveCount === weatherStops.length) {
+        setWeatherStatus("Live weather loaded", "Trip dates switch from typical July to forecast when they enter the available window.");
+      } else if (liveCount > 0) {
+        setWeatherStatus("Partial live weather", "Some stops loaded live data; the rest are using typical July planning notes.");
+      } else {
+        setWeatherStatus("Typical July shown", "Live weather could not be reached, so fallback notes are visible.");
+      }
+    }
 
     function setTab(tabId, shouldUpdateHash = true) {
       const target = document.getElementById(tabId);
@@ -2318,6 +2901,8 @@
         setTab(tabId, false);
       }
     });
+
+    loadWeather();
   </script>
 </body>
 </html>
