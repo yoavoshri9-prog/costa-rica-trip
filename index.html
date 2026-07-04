@@ -757,7 +757,7 @@
 
     .hotel-body {
       display: grid;
-      gap: 12px;
+      gap: 14px;
       padding: 14px;
     }
 
@@ -787,6 +787,43 @@
       border-radius: 999px;
       font-size: 0.74rem;
       font-weight: 800;
+    }
+
+    .hotel-detail-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .hotel-detail {
+      display: grid;
+      grid-template-columns: 92px minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
+      padding: 11px 12px;
+      background: linear-gradient(90deg, #f7fbf8 0%, #fff 100%);
+      border: 1px solid #e1ece8;
+      border-left: 3px solid rgba(20, 99, 84, 0.28);
+      border-radius: var(--radius);
+    }
+
+    .hotel-detail span {
+      color: var(--rainforest);
+      font-size: 0.66rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      line-height: 1.35;
+    }
+
+    .hotel-detail p {
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }
+
+    .hotel-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
     }
 
     .hotel-link {
@@ -1558,6 +1595,11 @@
         grid-template-columns: 1fr;
       }
 
+      .hotel-detail {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+
       .contact-row {
         grid-template-columns: 42px minmax(0, 1fr);
       }
@@ -1634,8 +1676,8 @@
           <p class="panel-note">A 22-day door-to-door plan with Costa Rica from July 12 to July 29, framed by Athens overnight buffers for the long flights.</p>
         </div>
         <div class="mini-status">
-          <strong>One open planning gap</strong>
-          <span>First Costa Rica night is confirmed at Costa Rica Marriott Hotel Hacienda Belen. July 28-29 still needs a return-airport buffer.</span>
+          <strong>Open planning gaps</strong>
+          <span>The Twentyone Hotel is set for the first Athens buffer, and the first Costa Rica night is confirmed at Costa Rica Marriott Hacienda Belen. July 28-29 and the return Athens night still need hotels.</span>
         </div>
       </div>
 
@@ -1883,8 +1925,8 @@
         <div class="flight-summary">
           <div class="summary-card">
             <i class="fa-solid fa-tag" aria-hidden="true"></i>
-            <h3>Estimated fare</h3>
-            <p>About $1,200 per person for SWISS/Edelweiss, plus the separate EL AL TLV &lt;-&gt; ATH tickets.</p>
+            <h3>Ticket note</h3>
+            <p>EL AL covers the Athens legs, then SWISS and Edelweiss handle the Costa Rica connection through Zurich.</p>
           </div>
           <div class="summary-card">
             <i class="fa-solid fa-repeat" aria-hidden="true"></i>
@@ -1905,7 +1947,7 @@
 
         <div class="notice">
           <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
-          <div><strong>EL AL Classic package:</strong> Athens legs show 8 kg cabin/trolley baggage and 23 kg checked baggage. Seat selection and meals are listed as included; changes/cancellation are listed as paid. Cabin bag dimensions are up to 115 cm combined; checked bag dimensions are up to 158 cm combined. Recheck airline baggage policy before departure.</div>
+          <div><strong>EL AL Classic package:</strong> Athens legs show 8 kg cabin/trolley baggage and 23 kg checked baggage. Seat selection and meals are included. Cabin bag dimensions are up to 115 cm combined; checked bag dimensions are up to 158 cm combined. Recheck airline baggage policy before departure.</div>
         </div>
       </div>
     </section>
@@ -1915,7 +1957,7 @@
         <div>
           <p class="panel-kicker">Stays</p>
           <h2 class="panel-title">Hotels and buffers</h2>
-          <p class="panel-note">The confirmed Costa Rica lodging blocks from the baseline, plus the Athens flight buffers and the airport gap to confirm before departure.</p>
+          <p class="panel-note">The confirmed lodging blocks, plus the remaining airport and return-Athens buffers to close before departure.</p>
         </div>
       </div>
 
@@ -1923,11 +1965,20 @@
         <article class="hotel-card" style="--hotel-image:url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=900&amp;q=80');">
           <div class="hotel-top">
             <span class="hotel-dates">Jul 10-12</span>
-            <h3>Athens Overnight</h3>
+            <h3>The Twentyone Hotel</h3>
           </div>
           <div class="hotel-body">
-            <div class="hotel-meta"><span><i class="fa-solid fa-plane" aria-hidden="true"></i> Pre-flight buffer</span><span>2 nights</span></div>
-            <p>Arrive from Tel Aviv on EL AL LY543 at 17:40 on Jul 10. Stay in Athens before the 04:25 departure to Zurich on Jul 12.</p>
+            <div class="hotel-meta"><span><i class="fa-solid fa-plane" aria-hidden="true"></i> Pre-flight buffer</span><span>2 nights</span><span>Order MT260704104203</span></div>
+            <div class="hotel-detail-list">
+              <div class="hotel-detail"><span>Booking</span><p>Payment successful through Alpha Bank / Nexi. Merchant: THETWENTYONEHOTEL.</p></div>
+              <div class="hotel-detail"><span>Dates</span><p>Jul 10-12, with one full buffer day in Athens before the Costa Rica flight.</p></div>
+              <div class="hotel-detail"><span>Room</span><p>Two Executive Rooms, recommended by the hotel for the family.</p></div>
+              <div class="hotel-detail"><span>Breakfast</span><p>Daily full English breakfast is included.</p></div>
+              <div class="hotel-detail"><span>Family note</span><p>Land from Tel Aviv at 17:40 on Jul 10. Keep Jul 11 easy before the 04:25 Zurich flight on Jul 12.</p></div>
+            </div>
+            <div class="hotel-actions">
+              <a class="hotel-link" href="https://www.booking.com/hotel/gr/the-twentyone.he.html" target="_blank" rel="noreferrer"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Booking.com</a>
+            </div>
           </div>
         </article>
 
@@ -1937,10 +1988,18 @@
             <h3>Costa Rica Marriott Hotel Hacienda Belen</h3>
           </div>
           <div class="hotel-body">
-            <div class="hotel-meta"><span><i class="fa-solid fa-city" aria-hidden="true"></i> Arrival night</span><span>1 night</span><span>Marriott Hotels &amp; Resorts</span></div>
-            <p>Booked for Lior Oshri, Sun, Jul 12, 2026 - Mon, Jul 13, 2026. Address: 700 meters west from Bridgestone/Firestone, La Ribera de Belen, Heredia, Costa Rica.</p>
-            <a class="hotel-link" href="https://www.marriott.com/en-us/hotels/sjocr-costa-rica-marriott-hotel-hacienda-belen/overview/" target="_blank" rel="noreferrer"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Marriott page</a>
-            <a class="hotel-link" href="tel:+50622980000"><i class="fa-solid fa-phone" aria-hidden="true"></i> 2298 0000</a>
+            <div class="hotel-meta"><span><i class="fa-solid fa-city" aria-hidden="true"></i> Arrival night</span><span>1 night</span><span>Conf #74618383</span></div>
+            <div class="hotel-detail-list">
+              <div class="hotel-detail"><span>Booking</span><p>Lior Oshri, confirmation #74618383.</p></div>
+              <div class="hotel-detail"><span>Dates</span><p>Sun Jul 12 to Mon Jul 13. Check-in 4:00 PM, check-out 12:00 PM.</p></div>
+              <div class="hotel-detail"><span>Room</span><p>Two guest rooms, each with 2 double beds. The confirmation lists 2 adults per room.</p></div>
+              <div class="hotel-detail"><span>Family note</span><p>Connected or side-by-side rooms were requested. Good airport-area landing night before the mountain drive.</p></div>
+              <div class="hotel-detail"><span>Address</span><p>700 meters west from Bridgestone/Firestone, La Ribera de Belen, Heredia.</p></div>
+            </div>
+            <div class="hotel-actions">
+              <a class="hotel-link" href="https://www.marriott.com/en-us/hotels/sjocr-costa-rica-marriott-hotel-hacienda-belen/overview/" target="_blank" rel="noreferrer"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Marriott page</a>
+              <a class="hotel-link" href="tel:+50622980000"><i class="fa-solid fa-phone" aria-hidden="true"></i> 2298 0000</a>
+            </div>
           </div>
         </article>
 
@@ -1950,9 +2009,16 @@
             <h3>El Silencio Lodge &amp; Spa</h3>
           </div>
           <div class="hotel-body">
-            <div class="hotel-meta"><span><i class="fa-solid fa-water" aria-hidden="true"></i> Bajos del Toro</span><span>2 nights</span></div>
-            <p>2-bedroom suite with Jacuzzi in a remote highland cloud forest.</p>
-            <a class="hotel-link" href="https://www.booking.com/hotel/cr/el-silencio-lodge.en-gb.html" target="_blank" rel="noreferrer"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Booking.com</a>
+            <div class="hotel-meta"><span><i class="fa-solid fa-water" aria-hidden="true"></i> Bajos del Toro</span><span>2 nights</span><span>Conf #1031976108</span></div>
+            <div class="hotel-detail-list">
+              <div class="hotel-detail"><span>Booking</span><p>Lior Oshri, confirmation #1031976108.</p></div>
+              <div class="hotel-detail"><span>Dates</span><p>Mon Jul 13 to Wed Jul 15. Check-in 15:00, check-out 11:00.</p></div>
+              <div class="hotel-detail"><span>Room</span><p>2 Bedrooms Suite with Jacuzzi.</p></div>
+              <div class="hotel-detail"><span>Family note</span><p>Quiet cloud-forest base for lodge trails, waterfalls, and Blue Falls.</p></div>
+            </div>
+            <div class="hotel-actions">
+              <a class="hotel-link" href="https://www.booking.com/hotel/cr/el-silencio-lodge.en-gb.html" target="_blank" rel="noreferrer"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Booking.com</a>
+            </div>
           </div>
         </article>
 
@@ -1962,9 +2028,16 @@
             <h3>Arenal Springs</h3>
           </div>
           <div class="hotel-body">
-            <div class="hotel-meta"><span><i class="fa-solid fa-mountain-sun" aria-hidden="true"></i> La Fortuna</span><span>5 nights</span></div>
-            <p>Master suite volcano view for 2 adults and 2 children.</p>
-            <a class="hotel-link" href="https://www.booking.com/hotel/cr/arenal-springs-resort-amp-spa.he.html" target="_blank" rel="noreferrer"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Booking.com</a>
+            <div class="hotel-meta"><span><i class="fa-solid fa-mountain-sun" aria-hidden="true"></i> La Fortuna</span><span>5 nights</span><span>Code Z2IBK26</span></div>
+            <div class="hotel-detail-list">
+              <div class="hotel-detail"><span>Booking</span><p>Reservation code Z2IBK26 for Lior Oshri.</p></div>
+              <div class="hotel-detail"><span>Dates</span><p>Jul 15 to Jul 20.</p></div>
+              <div class="hotel-detail"><span>Room</span><p>Master Suite Volcano View for 2 adults and 2 children, ages 12 and 16.</p></div>
+              <div class="hotel-detail"><span>Family note</span><p>Full breakfast is included for all guests. This is the long active stay for rafting, night tour, bridges, safari boat, volcano hike, and Rio Fortuna waterfall.</p></div>
+            </div>
+            <div class="hotel-actions">
+              <a class="hotel-link" href="https://www.booking.com/hotel/cr/arenal-springs-resort-amp-spa.he.html" target="_blank" rel="noreferrer"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Booking.com</a>
+            </div>
           </div>
         </article>
 
@@ -1974,21 +2047,37 @@
             <h3>Koora Monteverde</h3>
           </div>
           <div class="hotel-body">
-            <div class="hotel-meta"><span><i class="fa-solid fa-cloud" aria-hidden="true"></i> Monteverde</span><span>2 nights</span></div>
-            <p>Cloud Forest Bungalow with breakfast included.</p>
-            <a class="hotel-link" href="https://www.booking.com/hotel/cr/aguti-lodge-amp-reserve.en-gb.html" target="_blank" rel="noreferrer"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Booking.com</a>
+            <div class="hotel-meta"><span><i class="fa-solid fa-cloud" aria-hidden="true"></i> Monteverde</span><span>2 nights</span><span>Conf #55674087</span></div>
+            <div class="hotel-detail-list">
+              <div class="hotel-detail"><span>Booking</span><p>Confirmation #55674087.</p></div>
+              <div class="hotel-detail"><span>Dates</span><p>Mon Jul 20 to Wed Jul 22. Check-in 14:00, check-out 11:00.</p></div>
+              <div class="hotel-detail"><span>Room</span><p>Cloud Forest Bungalow, 2 levels and 2 bedrooms, sleeping up to 4.</p></div>
+              <div class="hotel-detail"><span>Family note</span><p>Breakfast and Wi-Fi are included. Cooler cloud-forest stop for hanging bridges and zip-line / Omega time.</p></div>
+            </div>
+            <div class="hotel-actions">
+              <a class="hotel-link" href="https://www.booking.com/hotel/cr/aguti-lodge-amp-reserve.en-gb.html" target="_blank" rel="noreferrer"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Booking.com</a>
+            </div>
           </div>
         </article>
 
         <article class="hotel-card" style="--hotel-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&amp;q=80');">
           <div class="hotel-top">
             <span class="hotel-dates">Jul 22-25</span>
-            <h3>The Coast</h3>
+            <h3>The Coast BeachFront Hotel</h3>
           </div>
           <div class="hotel-body">
-            <div class="hotel-meta"><span><i class="fa-solid fa-umbrella-beach" aria-hidden="true"></i> Tamarindo</span><span>3 nights</span></div>
-            <p>Reservation work in progress for the Pacific surf block.</p>
-            <a class="hotel-link" href="https://www.booking.com/hotel/cr/casa-cook-luxury-beach-front-cabinas.he.html" target="_blank" rel="noreferrer"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Booking.com</a>
+            <div class="hotel-meta"><span><i class="fa-solid fa-umbrella-beach" aria-hidden="true"></i> Tamarindo</span><span>3 nights</span><span>Ref LH25121252685381</span></div>
+            <div class="hotel-detail-list">
+              <div class="hotel-detail"><span>Booking</span><p>LittleHotelier reference LH25121252685381.</p></div>
+              <div class="hotel-detail"><span>Dates</span><p>Jul 22 to Jul 25. Check-in 3:00 PM, check-out 11:00 AM.</p></div>
+              <div class="hotel-detail"><span>Room</span><p>Room 5 - Villa for 2 adults and 2 children.</p></div>
+              <div class="hotel-detail"><span>Family note</span><p>Beachfront base for surf mornings. Registered guests only; wristbands are required for property security.</p></div>
+              <div class="hotel-detail"><span>Address</span><p>100 meters Norte del Hotel Capitan Suizo, Tamarindo.</p></div>
+            </div>
+            <div class="hotel-actions">
+              <a class="hotel-link" href="tel:+50626530125"><i class="fa-solid fa-phone" aria-hidden="true"></i> +506 2653 0125</a>
+              <a class="hotel-link" href="https://www.booking.com/hotel/cr/casa-cook-luxury-beach-front-cabinas.he.html" target="_blank" rel="noreferrer"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Booking.com</a>
+            </div>
           </div>
         </article>
 
@@ -1998,9 +2087,16 @@
             <h3>Parador Resort &amp; Spa</h3>
           </div>
           <div class="hotel-body">
-            <div class="hotel-meta"><span><i class="fa-solid fa-binoculars" aria-hidden="true"></i> Manuel Antonio</span><span>3 nights</span></div>
-            <p>2 garden rooms at Punta Quepos near the national park.</p>
-            <a class="hotel-link" href="https://www.booking.com/hotel/cr/parador-resort-and-spa.he.html" target="_blank" rel="noreferrer"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Booking.com</a>
+            <div class="hotel-meta"><span><i class="fa-solid fa-binoculars" aria-hidden="true"></i> Manuel Antonio</span><span>3 nights</span><span>Res #76647</span></div>
+            <div class="hotel-detail-list">
+              <div class="hotel-detail"><span>Booking</span><p>Reservation #76647 for Lior Oshri.</p></div>
+              <div class="hotel-detail"><span>Dates</span><p>Jul 25 to Jul 28.</p></div>
+              <div class="hotel-detail"><span>Room</span><p>2 Garden Rooms for 2 adults and 2 children, ages 12 and 16.</p></div>
+              <div class="hotel-detail"><span>Family note</span><p>The hotel asked for full guest names, first-visit note, allergies or mobility needs, and trip purpose. Good base for Manuel Antonio park, beach time, catamaran, and jetski.</p></div>
+            </div>
+            <div class="hotel-actions">
+              <a class="hotel-link" href="https://www.booking.com/hotel/cr/parador-resort-and-spa.he.html" target="_blank" rel="noreferrer"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Booking.com</a>
+            </div>
           </div>
         </article>
 
@@ -2011,7 +2107,11 @@
           </div>
           <div class="hotel-body">
             <div class="hotel-meta"><span><i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i> Needs confirmation</span><span>1 night</span></div>
-            <p>Consider San Jose or an airport-area hotel before the 15:50 SJO departure.</p>
+            <div class="hotel-detail-list">
+              <div class="hotel-detail"><span>Booking</span><p>No reservation added yet.</p></div>
+              <div class="hotel-detail"><span>Dates</span><p>Jul 28-29.</p></div>
+              <div class="hotel-detail"><span>Family note</span><p>Consider San Jose or an airport-area hotel before the 15:50 SJO departure.</p></div>
+            </div>
           </div>
         </article>
 
@@ -2022,7 +2122,11 @@
           </div>
           <div class="hotel-body">
             <div class="hotel-meta"><span><i class="fa-solid fa-plane-arrival" aria-hidden="true"></i> Return buffer</span><span>1 night</span></div>
-            <p>Overnight after landing in Athens at 15:45, before the 14:20 EL AL flight home.</p>
+            <div class="hotel-detail-list">
+              <div class="hotel-detail"><span>Booking</span><p>Athens return hotel still needs to be added.</p></div>
+              <div class="hotel-detail"><span>Dates</span><p>Jul 30-31.</p></div>
+              <div class="hotel-detail"><span>Family note</span><p>Overnight after landing in Athens at 15:45, before the 14:20 EL AL flight home.</p></div>
+            </div>
           </div>
         </article>
       </div>
@@ -2056,11 +2160,11 @@
           <article class="day-card flight">
             <div class="day-head"><span class="day-number">10</span><span class="day-type">Flight</span></div>
             <div class="day-place">TLV to Athens</div>
-            <p class="day-plan">15:30-17:40 on EL AL LY543. Overnight in Athens.</p>
+            <p class="day-plan">15:30-17:40 on EL AL LY543. Check in at The Twentyone Hotel.</p>
           </article>
           <article class="day-card buffer">
             <div class="day-head"><span class="day-number">11</span><span class="day-type">Athens</span></div>
-            <div class="day-place">Athens buffer</div>
+            <div class="day-place">The Twentyone Hotel</div>
             <p class="day-plan">Easy Athens day before the 04:25 departure to Zurich.</p>
           </article>
 
@@ -2118,7 +2222,7 @@
           <article class="day-card travel beach">
             <div class="day-head"><span class="day-number">22</span><span class="day-type">Move</span></div>
             <div class="day-place">Tamarindo</div>
-            <p class="day-plan">Transfer to The Coast. Beach, sunset, and surf school check-in.</p>
+            <p class="day-plan">Transfer to The Coast BeachFront Hotel. Beach, sunset, and surf school check-in.</p>
           </article>
           <article class="day-card beach">
             <div class="day-head"><span class="day-number">23</span><span class="day-type">Surf</span></div>
@@ -2538,7 +2642,7 @@
             <h3>Tamarindo</h3>
           </div>
           <div class="spot-content">
-            <div class="spot-meta">Jul 22-25, 3 nights at The Coast</div>
+            <div class="spot-meta">Jul 22-25, 3 nights at The Coast BeachFront Hotel</div>
             <p>The Pacific chapter is surf-first: plan at least two mornings in the water, then keep the afternoons flexible for riding, boat time, and sunset.</p>
             <div class="spot-weather" data-weather-chip="tamarindo">
               <span><i class="fa-solid fa-water" aria-hidden="true"></i><strong data-chip-temp>24-32 deg C</strong></span>
