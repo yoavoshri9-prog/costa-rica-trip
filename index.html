@@ -260,11 +260,19 @@
 
     .panel-head {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-columns: 1fr;
       align-items: end;
       gap: 20px;
       margin-bottom: 22px;
       padding-top: 18px;
+    }
+
+    .panel-head > div {
+      min-width: 0;
+    }
+
+    .panel-head:has(.mini-status) {
+      grid-template-columns: minmax(320px, 1fr) minmax(260px, 360px);
     }
 
     .panel-kicker {
@@ -294,7 +302,8 @@
     .mini-status {
       display: grid;
       gap: 6px;
-      min-width: 250px;
+      width: 100%;
+      min-width: 0;
       padding: 14px;
       background: #fff;
       border: 1px solid var(--line);
@@ -1511,8 +1520,8 @@
         grid-template-columns: 1fr;
       }
 
-      .mini-status {
-        min-width: 0;
+      .panel-head:has(.mini-status) {
+        grid-template-columns: 1fr;
       }
 
       .flight-stage,
