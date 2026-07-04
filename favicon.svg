@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Jungle monkey favicon">
+  <rect width="64" height="64" rx="14" fill="#146354"/>
+  <path d="M8 16c9-8 19-10 30-5 7 3 13 2 18-3-2 9-8 15-18 17-12 2-21-2-30-9Z" fill="#2d8b69"/>
+  <path d="M4 28c8-5 16-6 24-2 8 3 16 2 25-4-4 9-11 14-22 15-11 1-20-2-27-9Z" fill="#6fbf73" opacity=".86"/>
+  <circle cx="17.5" cy="33" r="9.5" fill="#6b3f24"/>
+  <circle cx="46.5" cy="33" r="9.5" fill="#6b3f24"/>
+  <circle cx="17.5" cy="33" r="5.5" fill="#c48a57"/>
+  <circle cx="46.5" cy="33" r="5.5" fill="#c48a57"/>
+  <circle cx="32" cy="34" r="20" fill="#7a4829"/>
+  <ellipse cx="32" cy="39" rx="14" ry="11" fill="#d4a06b"/>
+  <path d="M21 29c2-8 7-12 11-12s9 4 11 12c-5-3-17-3-22 0Z" fill="#5b321f"/>
+  <circle cx="24.5" cy="33" r="2.8" fill="#102235"/>
+  <circle cx="39.5" cy="33" r="2.8" fill="#102235"/>
+  <circle cx="25.4" cy="32.1" r=".8" fill="#fff"/>
+  <circle cx="40.4" cy="32.1" r=".8" fill="#fff"/>
+  <ellipse cx="32" cy="38.5" rx="3.6" ry="2.4" fill="#7a4829"/>
+  <path d="M26 44c3 3 9 3 12 0" fill="none" stroke="#7a4829" stroke-width="3" stroke-linecap="round"/>
+</svg>
